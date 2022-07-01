@@ -10,5 +10,15 @@ def read_root():
 
 
 @app.get("/items/{item_id}")
-def read_item(item_id: int, q: str|None = None):
+def read_item(item_id: int = None, q: str|None = None):
     return {"item_id": item_id, "q": q}
+
+items = [
+    {"item_id": 1, "q": 1},
+    {"item_id": 2, "q": 2},
+    {"item_id": 3, "q": 3},
+]
+
+@app.get("/items/")
+def read_item():
+    return items
