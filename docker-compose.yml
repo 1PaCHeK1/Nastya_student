@@ -1,0 +1,12 @@
+version: "3.10"
+
+services:
+  api:
+    build: ./
+    image: nastya_fastapi
+    command:  uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8005
+    volumes:
+      - ./:/code
+    ports:
+      - 8005:8005
+    expose: [8005]
