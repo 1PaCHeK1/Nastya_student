@@ -1,0 +1,155 @@
+body{
+	background-color: #c5b6a1;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 {	
+    font-size: 25px;
+    font-family: cursive;
+    color: #000;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-left: 50px;
+    width: auto;
+}
+
+h2 {	
+    font-size: 25px;
+    font-family: cursive;
+    color: #000;
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    width: auto;
+}
+
+h3 {	
+    font-size: 40px;
+    font-family: cursive;
+    color: #000;
+    margin-top: 0px;
+    padding-top: 20px;
+    padding-left: 80px;
+    width: auto;
+}
+
+h4 {
+    font-size: 25px;
+    font-family: cursive;
+    color: #000;
+    margin: 0px;
+    width: auto;
+}
+
+#header{
+	background-color: #b09573;
+	height: 11vh;
+}
+#main{
+	background-color: #eadbca;
+	height: 335vh;
+}
+#footer{
+	background-color: #b09573;
+	height: 30vh;
+}
+ul.nav{
+    margin-right: 0px;
+    padding-top: 20px;
+    padding-right: 310px;
+    list-style: none;
+}
+
+td {
+    border: 0px;
+    width: 250px;
+    height: 30px;
+    vertical-align: top;
+}
+
+.nav li { 
+    float: right;
+}
+ul.nav a {
+    display: block;
+    width: 6em;
+    padding:10px;
+    margin: 0 10px;
+    background-color: #eadbca;
+    border: 2px #333;
+    text-decoration: none;
+    text-align: center;
+    font-family: cursive;
+    color: rgb(0, 0, 0);
+}
+
+
+.toprightpic {
+    float: right;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+.магазин {
+    float: left;
+    padding-left: 25px;
+    padding-top: 0px;
+}
+
+ul.nav1{
+    margin-left: 0px;
+    padding-left: 40px;
+    padding-top: 0px;
+    list-style: none;
+}
+
+ul.nav1 a {
+    font-family: cursive;
+    color: rgb(0, 0, 0); 
+}
+
+.products li {
+    float: left;
+}
+
+ul.products {
+    list-style: none;
+    margin-left: -50px;
+}
+
+ul.products div {
+    list-style: none;
+    margin-left: 100px;
+}
+
+.pets {
+    margin-top: 530px;
+}
+
+.card {
+    max-width: 300px;
+    text-align: center;
+    font-family: cursive;
+    background: #ffffff;
+  }
+  
+.price {
+    color: rgb(0, 0, 0);
+    font-size: 22px;
+    font-family: cursive;
+    }
+
+.card button {
+    
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    }
+  
