@@ -7,11 +7,11 @@
   </head>
   <body>
     <div id="header">
-        <a href='#'><img class="toprightpic" src="welcome_page_images/профиль.png" height="40px" /></a>
-        <a href='#'><img class="toprightpic" src="welcome_page_images/настройки.png" height="40px" /></a>
-        <a href='#'><img class="toprightpic" src="welcome_page_images/почта.png" height="40px" /></a>
-        <a href='#'><img class="toprightpic" src="welcome_page_images/корзина.png" height="40px" /></a>
-        <a href='#'><img class="toprightpic" src="welcome_page_images/сердечко.png" height="40px" /></a>
+        <a href='#'><img class="toprightpic" src="{{ url_for('static', path='images/profile.png') }}" height="40px" /></a>
+        <!-- <a href='#'><img class="toprightpic" src="{{ url_for('static', path='images/settings.png') }}" height="40px" /></a> -->
+        <!-- <a href='#'><img class="toprightpic" src="welcome_page_images/почта.png" height="40px" /></a> -->
+        <a href='#'><img class="toprightpic" src="{{ url_for('static', path='images/basket.png') }}" height="40px" /></a>
+        <!-- <a href='#'><img class="toprightpic" src="welcome_page_images/сердечко.png" height="40px" /></a> -->
         <ul class="nav">
             <li><a href="#footer">О сайте</a></li>
             <li><a href="#rodents">Грызуны</a></li>
@@ -24,113 +24,42 @@
     </div>
 
 	<div id="main">
-        <h3 id="cats">Кошки</h3>
-        <ul class="products">
-            {% for item in items %}
-            <li>
-                <div class="card">
-                    <img src="{{ url_for('static', path='images/1.png') }}" alt="корм" style="width:100%">
-                    <h4>{{ item.name }}</h4>
-                    <p class="price">{{ item.price }} руб/кг</p>
-                    {% if item.sale %}
-                    <p class="sale">{{ item.sale }} %</p>                    
-                    {% endif %}
-                    <p><button>Добавить в корзину</button></p>
-                  </div>
-            </li>
-            {% endfor %}
-        </ul>
+        {% for pet in items %}
+            {% if pet != "cats" %}
+                <h3 id=pet class=pets>{{pet}}</h3>
+            {% else %}
+                <h3 id=pet>{{pet}}</h3>
+            {% endif %}
+            <ul class="products">
+                {% for item in items[pet] %}
+                <li>
+                    <div class="card">
+                        <img src="{{ url_for('static', path=item.picture) }}" alt={{item.name}} style="width:100%">
+                        <h4>{{ item.name }}</h4>
+                        {% if item.sale == 0 %}
+                            {% if item.volume == 0 %}
+                            <p class="price">{{ item.price }} руб</p>
+                            <p class="price"> ᅠ </p>
+                            {% else %}
+                            <p class="price">{{ item.price }} руб/{{ item.volume }} г</p>
+                            <p class="price"> ᅠ </p>
+                            {% endif %}
+                        {% else %}
+                            {% if item.volume == 0 %}
+                            <p class="price"><s>{{ item.price }} руб</s> ᅠ {{ item.sale }} %</p>
+                            <p class="price">{{item.price * (1 - item.sale/100)}} руб</p>
+                            {% else %}
+                            <p class="price"><s>{{ item.price }} руб</s> ᅠ {{ item.sale }} %</p>
+                            <p class="price">{{item.price * (1 - item.sale/100)}} руб/{{ item.volume }} г</p>
+                            {% endif %}
+                        {% endif %}
+                        <p><button>Добавить в корзину</button></p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
         
-        <h3 id="dogs" class="pets">Собаки</h3>
-        <ul class="products">
-            <li>
-                <div class="card">
-                    <img src="welcome_page_images/собаки/корм.jpg" alt="корм" style="width:100%">
-                    <h4>Корм</h4>
-                    <p class="price">900 руб/кг</p>
-                    <p><button>Добавить в корзину</button></p>
-                  </div>
-            </li>
-            <li>
-                <div class="card">
-                    <img src="welcome_page_images/собаки/миски.png" alt="миски" style="width:100%">
-                    <h4>Миски</h4>
-                    <p class="price">1200 руб</p>
-                   
-                    <p><button>Добавить в корзину</button></p>
-                  </div>
-            </li>
-            <li>
-                <div class="card">
-                    <img src="welcome_page_images/собаки/игрушки.png" alt="игрушки" style="width:100%">
-                    <h4>Игрушка</h4>
-                    <p class="price">800 руб</p>
-                   
-                    <p><button>Добавить в корзину</button></p>
-                  </div>
-            </li>
-        </ul>
-
-        <h3 id="birds" class="pets">Птицы</h3>
-        <ul class="products">
-            <li>
-                <div class="card">
-                    <img src="welcome_page_images/птицы/корм.jpg" alt="корм" style="width:100%">
-                    <h4>Корм</h4>
-                    <p class="price">500 руб/кг</p>
-                    <p><button>Добавить в корзину</button></p>
-                  </div>
-            </li>
-            <li>
-                <div class="card">
-                    <img src="welcome_page_images/птицы/миска.jpg" alt="миска" style="width:100%">
-                    <h4>Миска</h4>
-                    <p class="price">400 руб</p>
-                   
-                    <p><button>Добавить в корзину</button></p>
-                  </div>
-            </li>
-            <li>
-                <div class="card">
-                    <img src="welcome_page_images/птицы/игрушка.jpg" alt="игрушки" style="width:100%">
-                    <h4>Игрушка</h4>
-                    <p class="price">300 руб</p>
-                   
-                    <p><button>Добавить в корзину</button></p>
-                  </div>
-            </li>
-        </ul>
-
-        <h3 id="rodents" class="pets">Грызуны</h3>
-        <ul class="products">
-            <li>
-                <div class="card">
-                    <img src="welcome_page_images/грызуны/корм.png" alt="корм" style="width:100%">
-                    <h4>Корм</h4>
-                    <p class="price">400 руб/кг</p>
-                    <p><button>Добавить в корзину</button></p>
-                  </div>
-            </li>
-            <li>
-                <div class="card">
-                    <img src="welcome_page_images/грызуны/миска.jpg" alt="миска" style="width:100%">
-                    <h4>Миска</h4>
-                    <p class="price">300 руб</p>
-                   
-                    <p><button>Добавить в корзину</button></p>
-                  </div>
-            </li>
-            <li>
-                <div class="card">
-                    <img src="welcome_page_images/грызуны/домик.jpg" alt="игрушки" style="width:100%">
-                    <h4>Домик</h4>
-                    <p class="price">600 руб</p>
-                   
-                    <p><button>Добавить в корзину</button></p>
-                  </div>
-            </li>
-        </ul>
-
 
     </div>
 	<div id="footer">
@@ -152,7 +81,9 @@
                 </td>
                 <td>
                     <ul class="nav1">
-                        <li><a>+7 *телефон*</a></li>
+                        <li><a>+71234567</a></li>
+                        <li><a>pochta1@mail.ru</a></li>
+                        <li><a>pochta2@gmail.com</a></li>
                     </ul>
                 </td>
                 <td>
