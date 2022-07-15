@@ -1,0 +1,78 @@
+{
+    "1": {
+        "name": "корм kitekat",
+        "price": 200,
+        "volume": 100,
+        "sale": 15,
+        "image": "kitekat",
+        "pet": "cats"
+    },
+    "2":{
+        "name": "корм вискас",
+        "price": 300,
+        "volume": 150,
+        "sale": 0,
+        "image": "viscas",
+        "pet": "cats"
+    },
+    "3":{
+        "name": "игрушка trixie",
+        "price": 150,
+        "sale": 10,
+        "image": "toy_trixie",
+        "pet": "cats"
+    },
+    "4":{
+        "name": "корм royal canin",
+        "price": 2000,
+        "sale": 20,
+        "volume": 4000,
+        "image": "royal_canin",
+        "pet": "dogs"
+    },
+    "5":{
+        "name": "игрушка trixie",
+        "price": 300,
+        "sale": 0,
+        "image": "toy_trixie",
+        "pet": "dogs"
+    },
+    "6":{
+        "name": "ошейник halti",
+        "price": 800,
+        "sale": 0,
+        "image": "halti",
+        "pet": "dogs"
+    },
+    "7":{
+        "name": "игрушка trixie",
+        "price": 500,
+        "sale": 0,
+        "image": "toy_trixie",
+        "pet": "birds"
+    },
+    "8":{
+        "name": "корм rio",
+        "price": 400,
+        "volume": 1000,
+        "sale": 0,
+        "image": "rio",
+        "pet": "birds"
+    },
+    "9":{
+        "name": "корм little one",
+        "price": 500,
+        "volume": 1000,
+        "sale": 10,
+        "image": "little_one_hamsters",
+        "pet": "rodents"
+    },
+    "10":{
+        "name": "корм little one",
+        "price": 450,
+        "volume": 1000,
+        "sale": 0,
+        "image": "little_one_rats",
+        "pet": "rodents"
+    }
+}

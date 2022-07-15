@@ -36,6 +36,7 @@ h3 {
     width: auto;
 }
 
+
 h4 {
     font-size: 25px;
     font-family: cursive;
@@ -50,7 +51,7 @@ h4 {
 }
 #main{
 	background-color: #eadbca;
-	height: 335vh;
+	height: 370vh;
 }
 #footer{
 	background-color: #b09573;
@@ -125,7 +126,7 @@ ul.products div {
 }
 
 .pets {
-    margin-top: 530px;
+    margin-top: 600px;
 }
 
 .card {
